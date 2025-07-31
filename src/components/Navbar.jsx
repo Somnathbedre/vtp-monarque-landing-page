@@ -17,8 +17,12 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-2xl font-bold text-amber-600">VTP Monarque</h1>
+        
+        {/* Logo and Title */}
+        <div className="flex items-center space-x-2">
+          <img src="/vtp-realty-logo.png" alt="VTP Logo" className="h-10 w-auto" />
+          <h1 className="text-2xl font-bold text-amber-600">VTP Monarque</h1>
+        </div>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-6">
