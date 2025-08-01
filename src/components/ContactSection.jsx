@@ -12,7 +12,14 @@ export default function ContactSection() {
             Schedule a site visit, get a personalized quote or just know more about the project.
           </p>
         </div>
+
+        {/* Inquiry Form */}
         <InquiryForm />
+
+        {/* Address */}
+        <div className="mt-12 text-center text-gray-700 text-lg font-medium">
+          📍 Address: Near Hinjawadi Phase 1, Pune
+        </div>
       </div>
     </section>
   );

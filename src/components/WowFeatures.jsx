@@ -1,5 +1,3 @@
-
-
 import { Shield, Wifi, Building, Home, CheckCircle, Star } from 'lucide-react';
 
 const wowProjectFeatures = [
@@ -30,7 +28,6 @@ export default function WowFeatures() {
     <section id="features" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          {/* Heading */}
           <h2 className="text-5xl font-bold text-gray-800 mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">WOW</span> Features
           </h2>
@@ -38,24 +35,26 @@ export default function WowFeatures() {
             Exceptional features that set VTP Monarque apart from the ordinary.
           </p>
 
-          {/* WOW Feature Image */}
           <img
             src="/hero-images/wow-feature.jpg"
             alt="WOW Features"
-            className="mx-auto w-full max-w-3xl h-auto rounded-2xl shadow-2xl"
+            className="mx-auto w-full max-w-3xl h-auto rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-105"
           />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Project WOW Features */}
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 shadow-xl border border-amber-100">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 shadow-xl border border-amber-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
               <Building className="w-7 h-7 text-amber-600 mr-3" />
               WOW at Project Level
             </h3>
             <div className="space-y-4">
               {wowProjectFeatures.map((text, idx) => (
-                <div key={idx} className="flex items-center p-4 bg-white/70 rounded-xl">
+                <div
+                  key={idx}
+                  className="flex items-center p-4 bg-white/70 rounded-xl transition-transform duration-300 hover:scale-105"
+                >
                   <Shield className="w-5 h-5 text-amber-600 mr-4" />
                   <span className="text-gray-700 font-medium">{text}</span>
                 </div>
@@ -64,7 +63,7 @@ export default function WowFeatures() {
           </div>
 
           {/* Inside Home */}
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-xl border border-blue-100">
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-xl border border-blue-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
               <Home className="w-7 h-7 text-blue-600 mr-3" />
               WOW Inside Your Home
@@ -78,7 +77,10 @@ export default function WowFeatures() {
               </h4>
               <div className="grid grid-cols-1 gap-2">
                 {smartFeatures.map((feature, idx) => (
-                  <div key={idx} className="flex items-center p-3 bg-white/70 rounded-lg">
+                  <div
+                    key={idx}
+                    className="flex items-center p-3 bg-white/70 rounded-lg transition-transform duration-300 hover:scale-105"
+                  >
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
                     <span className="text-gray-700 text-sm font-medium">{feature}</span>
                   </div>
@@ -91,7 +93,10 @@ export default function WowFeatures() {
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Premium Finishes</h4>
               <div className="space-y-2">
                 {premiumFinishes.map((item, idx) => (
-                  <div key={idx} className="flex items-center p-2 bg-white/50 rounded-lg">
+                  <div
+                    key={idx}
+                    className="flex items-center p-2 bg-white/50 rounded-lg transition-transform duration-300 hover:scale-105"
+                  >
                     <Star className="w-4 h-4 text-yellow-500 mr-2" />
                     <span className="text-gray-700 text-sm">{item}</span>
                   </div>

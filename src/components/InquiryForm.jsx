@@ -11,11 +11,13 @@ export default function InquiryForm() {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false); // ✅ New state
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setError("");
     setSuccess("");
+    setIsSubmitted(false); // Reset on input change
   };
 
   const validateForm = () => {
@@ -41,23 +43,23 @@ export default function InquiryForm() {
     if (!validateForm()) return;
 
     emailjs
-  .send(
-    import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    formData,
-    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-  )
-  .then(
-    () => {
-      setSuccess("Message sent successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    },
-    (err) => {
-      setError("Failed to send message. Please try again later.");
-      console.error(err);
-    }
-  );
-
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setSuccess("Message sent successfully!");
+          setIsSubmitted(true); // ✅ Mark as submitted
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        },
+        (err) => {
+          setError("Failed to send message. Please try again later.");
+          console.error(err);
+        }
+      );
   };
 
   return (
@@ -106,9 +108,16 @@ export default function InquiryForm() {
       <button
         type="submit"
         className="w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white text-lg font-semibold rounded-lg hover:shadow-xl transition duration-300"
+        disabled={isSubmitted}
       >
-        Submit
+        {isSubmitted ? "Submitted ✅" : "Submit"}
       </button>
     </form>
   );
 }
+
+
+
+
+
+

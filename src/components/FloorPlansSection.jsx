@@ -1,6 +1,3 @@
-
-
-
 export default function FloorPlansSection() {
   const plans = [
     { type: "1 BHK", image: "/floorplans/1bhk.jpg" },
@@ -15,8 +12,15 @@ export default function FloorPlansSection() {
           <h2 className="text-5xl font-bold text-gray-800 mb-6">
             Spacious <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">Floor Plans</span>
           </h2>
-          <p className="text-lg text-gray-600">
-            Choose from 2, 3, and 4 BHK homes thoughtfully designed for space and elegance.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Explore our thoughtfully designed 1, 2 & 3 BHK residences — crafted with optimal space planning and modern finishes.
+            <br />
+            <span className="block mt-2 text-sm text-gray-500">
+              2 BHK from 68.55 sq.m. / 737.87 sq.ft. onwards · 3 BHK from 94.47 sq.m. / 1016.88 sq.ft. onwards
+            </span>
+            <span className="block mt-2 font-medium text-amber-600">
+              Download detailed floor plans from the brochure.
+            </span>
           </p>
         </div>
 
@@ -24,7 +28,7 @@ export default function FloorPlansSection() {
           {plans.map(({ type, image }, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition duration-300 border border-amber-100 text-center"
+              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-amber-100 text-center"
             >
               <img
                 src={image}
