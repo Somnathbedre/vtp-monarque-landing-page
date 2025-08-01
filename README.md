@@ -22,6 +22,7 @@ Built with **React** and **Tailwind CSS**, the site highlights premium amenities
 - 📥 **Download Brochure (Google Drive Link)**
 - 🏆 **Awards & Highlights Section**
 - 🌐 **Smooth Scroll Navigation with React Scroll**
+- 🏙️ **Auto-Scrolling Project Galary Section**
 
 ---
 
