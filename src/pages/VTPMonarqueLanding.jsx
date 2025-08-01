@@ -7,6 +7,7 @@ import LocationSection from "../components/LocationSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import Navbar from '../components/Navbar';
+import ProjectGallery from '../components/ProjectGallery';
 
 export default function VTPMonarqueLanding() {
   return (
@@ -18,6 +19,7 @@ export default function VTPMonarqueLanding() {
       <WowFeatures />
       <FloorPlansSection />
       <LocationSection />
+      <ProjectGallery /> 
       <ContactSection />
       <Footer />
     </div>
