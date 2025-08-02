@@ -1,3 +1,4 @@
+
 import { CheckCircle, Building, Dumbbell, Waves, Heart, TreePine, Play } from 'lucide-react';
 
 const primaryAmenities = [
@@ -16,22 +17,33 @@ const additionalAmenities = [
 
 export default function AmenitiesSection() {
   return (
-    <section id="amenities" className="py-20 bg-gradient-to-br from-gray-50 to-amber-50">
+    <section
+      id="amenities"
+      className="py-20 bg-gradient-to-br from-purple-100 via-blue-100 to-teal-100"
+    >
       <div className="container mx-auto px-4">
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-gray-800 mb-6">
-            Larger Than Life <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">Amenities</span>
+            Larger Than Life{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500">
+              Amenities
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Indulge in premium amenities designed to elevate your lifestyle across multiple levels of luxury.
           </p>
         </div>
 
+        {/* Primary Amenities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {primaryAmenities.map((amenity, idx) => (
-            <div key={idx} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-amber-100">
+            <div
+              key={idx}
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-blue-100"
+            >
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-xl text-amber-600 group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl text-blue-600 group-hover:scale-110 transition-transform duration-300">
                   {amenity.icon}
                 </div>
                 <div className="ml-4">
@@ -43,11 +55,17 @@ export default function AmenitiesSection() {
           ))}
         </div>
 
-        <div className="bg-white rounded-3xl p-8 shadow-xl border border-amber-100">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Additional Premium Amenities</h3>
+        {/* Additional Amenities List */}
+        <div className="bg-white rounded-3xl p-8 shadow-xl border border-blue-100">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+            Additional Premium Amenities
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {additionalAmenities.map((item, idx) => (
-              <div key={idx} className="flex items-center p-3 bg-amber-50 rounded-xl">
+              <div
+                key={idx}
+                className="flex items-center p-3 bg-blue-50 rounded-xl"
+              >
                 <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
                 <span className="text-gray-700 text-sm">{item}</span>
               </div>

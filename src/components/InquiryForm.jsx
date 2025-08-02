@@ -6,23 +6,22 @@ export default function InquiryForm() {
     name: "",
     email: "",
     phone: "",
-    message: "",
   });
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false); // ✅ New state
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setError("");
     setSuccess("");
-    setIsSubmitted(false); // Reset on input change
+    setIsSubmitted(false);
   };
 
   const validateForm = () => {
-    const { name, email, phone, message } = formData;
-    if (!name || !email || !phone || !message) {
+    const { name, email, phone } = formData;
+    if (!name || !email || !phone) {
       setError("All fields are required.");
       return false;
     }
@@ -52,8 +51,8 @@ export default function InquiryForm() {
       .then(
         () => {
           setSuccess("Message sent successfully!");
-          setIsSubmitted(true); // ✅ Mark as submitted
-          setFormData({ name: "", email: "", phone: "", message: "" });
+          setIsSubmitted(true);
+          setFormData({ name: "", email: "", phone: "" });
         },
         (err) => {
           setError("Failed to send message. Please try again later.");
@@ -92,14 +91,6 @@ export default function InquiryForm() {
           onChange={handleChange}
           className="p-4 border rounded-lg w-full"
         />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          rows="4"
-          value={formData.message}
-          onChange={handleChange}
-          className="p-4 border rounded-lg w-full md:col-span-2"
-        />
       </div>
 
       {error && <p className="text-red-600 mb-4">{error}</p>}
@@ -115,9 +106,3 @@ export default function InquiryForm() {
     </form>
   );
 }
-
-
-
-
-
-

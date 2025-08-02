@@ -1,6 +1,4 @@
 
-
-
 import { useEffect, useState } from 'react';
 import { Award, ChevronRight, Download } from 'lucide-react';
 
@@ -15,7 +13,7 @@ const images = [
   '/hero-images/building8.jpg',
 ];
 
-export default function HeroSection() {
+export default function HeroSection({ setShowPopup }) {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -72,18 +70,16 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            {/* Download Brochure (Google Drive link) */}
-            <a
-              href="https://shorturl.at/pm0HL"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+            {/* Download Brochure (opens popup form now) */}
+            <button
+              onClick={() => setShowPopup(true)}
+              className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-violet-600 text-white rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center justify-center">
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                 Download Brochure
               </div>
-            </a>
+            </button>
 
             {/* WhatsApp Button */}
             <a
@@ -110,3 +106,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+
