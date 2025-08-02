@@ -22,7 +22,7 @@ export default function VTPMonarqueLanding() {
       <Navbar setShowPopup={setShowPopup} />
       <HeroSection setShowPopup={setShowPopup} />
       <AboutSection />
-      <AmenitiesSection />
+      <AmenitiesSection onEnquireClick={() => setShowPopup(true)} />
       <WowFeatures />
       <FloorPlansSection onEnquireClick={() => setShowPopup(true)} /> {/* ✅ Fixed */}
       <LocationSection onEnquireClick={() => setShowPopup(true)} />

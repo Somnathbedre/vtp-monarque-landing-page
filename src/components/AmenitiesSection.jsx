@@ -1,4 +1,5 @@
 
+
 import { CheckCircle, Building, Dumbbell, Waves, Heart, TreePine, Play } from 'lucide-react';
 
 const primaryAmenities = [
@@ -15,7 +16,7 @@ const additionalAmenities = [
   "Kids Play Area", "Meditation Zone", "Senior Citizen Corner", "Library Corner"
 ];
 
-export default function AmenitiesSection() {
+export default function AmenitiesSection({ onEnquireClick }) {
   return (
     <section
       id="amenities"
@@ -36,7 +37,7 @@ export default function AmenitiesSection() {
         </div>
 
         {/* Primary Amenities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {primaryAmenities.map((amenity, idx) => (
             <div
               key={idx}
@@ -53,6 +54,16 @@ export default function AmenitiesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Hurry Up Button */}
+        <div className="flex justify-center mb-16">
+          <button
+            onClick={onEnquireClick}
+            className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Hurry Up!
+          </button>
         </div>
 
         {/* Additional Amenities List */}
@@ -76,3 +87,4 @@ export default function AmenitiesSection() {
     </section>
   );
 }
+

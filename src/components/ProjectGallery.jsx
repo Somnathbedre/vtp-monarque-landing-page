@@ -20,8 +20,11 @@ export default function ProjectGallery() {
     <section id="project-gallery" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-5xl font-bold text-gray-800 mb-4">
-            Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">Gallery</span>
+           <h2 className="text-5xl font-bold text-gray-800 mb-6">
+            Project{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500">
+              Gallery
+            </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Explore the visual elegance and grand architecture of VTP Monarque.
